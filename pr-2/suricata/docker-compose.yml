@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  suricata:
+    image: jasonish/suricata
+    network_mode: host
+    cap_add:
+      - net_admin
+      - net_raw
+      - sys_nice
+    environment:
+      - SURICATA_OPTIONS=-i ens3 -v
+    volumes:
+      - "./etc:/etc/suricata"
+      - "./rules:/my-rules"

@@ -1,0 +1,1 @@
+alert http $EXTERNAL_NET any -> $HOME_NET 8000 (msg:"Suspicious UA"; content:"User-Agent: mserdyukov"; sid:12345678; rev:1;)

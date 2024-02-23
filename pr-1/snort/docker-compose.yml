@@ -1,0 +1,19 @@
+version: '2'
+services:
+   ids:
+      image: fabriziogaliano/docker-snort-ids:latest
+
+      network_mode: host
+
+      volumes:
+         - "/etc/localtime:/etc/localtime"
+         - "./log/snort:/var/log/snort"
+         - "./docker:/docker"
+
+      privileged: false
+
+      environment:
+         SNORT_NET: "x.x.x.x/x"
+         HOST_INT: "eth0"
+         HOST_NAME: "snort01"
+
